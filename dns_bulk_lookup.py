@@ -16,7 +16,7 @@ import threading, re, queue
 try:
     import dns.resolver
 except:
-    print("[!] This script requires DNS Resolver")
+    print("[!] This script requires DNS Python")
     print("[!] https://github.com/rthalley/dnspython")
     print("[!] pip install dnspython")
     print("[!] Exiting script")
@@ -63,7 +63,7 @@ def storeInQueue(f):
 @storeInQueue
 def dns_check(item):
     """
-    Function uses DNS Resolver methods to find DNS results
+    Function uses DNS Python to find DNS results
     """
         try:
             answers = dns.resolver.query(item, 'A')
