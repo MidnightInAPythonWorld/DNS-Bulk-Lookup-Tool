@@ -1,1 +1,1 @@
-# Bulk-DNS-Lookup-Tool
+# DNS-Bulk-Lookup-Tool
