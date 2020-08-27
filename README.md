@@ -1,14 +1,14 @@
 # DNS-Bulk-Lookup-Tool
 
-#### Purpose
- - Perform bulk DNS A lookups
+#### Purpose:
+ - Perform bulk DNS A-Record lookups
  - Script is using threading to increase speeds
  - Performs about 5k lookups in 3:30 minutes
  
-#### Input
+#### Input:
  - Text file with list of domains
  
-#### Output
+#### Output:
  - A CSV file is generated with results
  
  
