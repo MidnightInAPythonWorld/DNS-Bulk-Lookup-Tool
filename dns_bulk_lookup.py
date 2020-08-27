@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 __author__ = 'MidnightInAPythonWorld'
 
-
 # Check for Python3
 import sys
 if sys.version_info[0] != 3:
@@ -12,7 +11,6 @@ if sys.version_info[0] != 3:
 
 # stdlib import used libraries
 import threading, re, queue
-
 
 #Import DNS Resolver
 try:
@@ -26,6 +24,11 @@ except:
 
 
 def open_domain_file():
+    """
+    Function will read in text file that has list of domains to be DNS queried.
+    Function expects user input to specify text file.
+    Function also runs domain names through regex to strip wildcards and check for compliant DNS names.
+    """
     data = []
     wildcards = re.compile(r'\*[a-zA-Z0-9_-].+')
     non_compliant = re.compile(r'[*a-zA-Z0-9_-].+')
@@ -59,6 +62,9 @@ def storeInQueue(f):
 
 @storeInQueue
 def dns_check(item):
+    """
+    Function uses DNS Resolver methods to find DNS results
+    """
         try:
             answers = dns.resolver.query(item, 'A')
             for rdata in answers:
