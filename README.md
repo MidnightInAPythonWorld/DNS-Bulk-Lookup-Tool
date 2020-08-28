@@ -13,4 +13,4 @@
  
  
 #### To Do:
- - Add Additional DNS types to tool
+ - Add additional DNS types to tool
