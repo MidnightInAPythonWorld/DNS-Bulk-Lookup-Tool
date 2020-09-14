@@ -65,15 +65,15 @@ def dns_check(item):
     """
     Function uses DNS Python to find DNS results
     """
-        try:
-            answers = dns.resolver.query(item, 'A')
-            for rdata in answers:
-                dns_response = str(rdata)
-                data = [item , dns_response]
-                return data
-        except:
-            data = [item , 'query-failed']
+    try:
+        answers = dns.resolver.query(item, 'A')
+        for rdata in answers:
+            dns_response = str(rdata)
+            data = [item , dns_response]
             return data
+    except:
+        data = [item , 'query-failed']
+        return data
 
 
 def main():
