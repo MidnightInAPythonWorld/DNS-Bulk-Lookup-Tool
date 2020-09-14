@@ -39,7 +39,7 @@ def open_domain_file():
             found_wildcards = wildcards.match(domain)
             found_non_compliant = non_compliant.match(domain)
             if not found_non_compliant:
-                print('[!] Non-compliant URL found in input fil: ', domain )
+                print('[!] Non-compliant URL found in input file: ', domain )
             if found_wildcards:
                 domain = domain.strip('*')
                 data.append(domain)
@@ -83,8 +83,9 @@ def main():
     print('[-] Performing batch DNS lookup...Please wait' )
     for item in domains:
         t = threading.Thread( target=dns_check, args=(item,) )
-        threads.append(t)
+        #threads.append(t)
         t.start()
+        threads.append(t)
         my_data = my_queue.get()
         results.append(my_data)
     for x in threads:
