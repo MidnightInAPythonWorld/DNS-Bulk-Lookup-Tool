@@ -83,7 +83,6 @@ def main():
     print('[-] Performing batch DNS lookup...Please wait' )
     for item in domains:
         t = threading.Thread( target=dns_check, args=(item,) )
-        #threads.append(t)
         t.start()
         threads.append(t)
         my_data = my_queue.get()
